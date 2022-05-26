@@ -3,6 +3,7 @@ package com.example.flappybirdclone;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -21,15 +22,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     }
 
-    void InitView(){
 
-        SurfaceHolder holder = getHolder();
-        holder.addCallback(this);
-        setFocusable(true);
-
-        gameThread = new GameThread(holder);
-
-    }
 
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder surfaceHolder) {
@@ -52,7 +45,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceDestroyed(@NonNull SurfaceHolder surfaceHolder) {
 
         if(gameThread.isRunning()){
-            gameThread.setIsRunning(false);
+            gameThread.setRunning(false);
             boolean retry = true;
             while(retry){
                 try{
@@ -64,5 +57,25 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             }
         }
 
+    }
+    void InitView(){
+
+        SurfaceHolder holder = getHolder();
+        holder.addCallback(this);
+        setFocusable(true);
+
+        gameThread = new GameThread(holder);
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int action = event.getAction();
+        //TAP IS DETECTED
+        if(action == MotionEvent.ACTION_DOWN){
+            AppConstant.getGameEngine().gameState = 1;
+            AppConstant.getGameEngine().bird.setVelocity(AppConstant.VELOCITY_WHEN_JUMPED);
+        }
+        return  true;
     }
 }

@@ -33,7 +33,9 @@ public class GameThread extends Thread{
             Canvas canvas = surfaceHolder.lockCanvas(null);
             if(canvas != null){
                 synchronized (surfaceHolder){
-                    AppConstant.getGameEngine().updateAndDrawgroundImage(canvas);
+                    AppConstant.getGameEngine().updateAndDrawableBackgroundImage(canvas);
+                    AppConstant.getGameEngine().updateAndDrawBird(canvas);
+                    AppConstant.getGameEngine().updateAndDrawTubes(canvas);
                     //Unlock the canvas
                     surfaceHolder.unlockCanvasAndPost(canvas);
                 }
@@ -51,4 +53,17 @@ public class GameThread extends Thread{
 
         }
     }
+
+
+    //Return whether the thread is Running
+    public boolean isRunning(){
+        return isRunning;
+    }
+
+    //Set the Thread condition; False = Stopped, True= Running
+    public void setRunning(boolean state){
+        isRunning = state;
+    }
+
+
 }
