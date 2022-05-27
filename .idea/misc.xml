@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Axel-/AndroidStudioProjects/FlappyBirdClone/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Axel-/Desktop/Udemy Works/Flappy-Bird-Clone/app/src/main/res/layout/about.xml" value="0.31354166666666666" />
         <entry key="..\:/Users/Axel-/Desktop/Udemy Works/Flappy-Bird-Clone/app/src/main/res/layout/activity_game.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Axel-/Desktop/Udemy Works/Flappy-Bird-Clone/app/src/main/res/layout/activity_game_over.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Axel-/Desktop/Udemy Works/Flappy-Bird-Clone/app/src/main/res/layout/activity_loading_screen.xml" value="0.25" />
+        <entry key="..\:/Users/Axel-/Desktop/Udemy Works/Flappy-Bird-Clone/app/src/main/res/layout/activity_main.xml" value="0.31354166666666666" />
       </map>
     </option>
   </component>

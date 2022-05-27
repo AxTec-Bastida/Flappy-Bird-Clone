@@ -1,6 +1,9 @@
 package com.example.flappybirdclone;
 
+import android.app.Activity;
 import android.app.appsearch.AppSearchBatchResult;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -65,17 +68,25 @@ public class GameEngine {
                     bird.getY() || tubes.get(scoringTube).getBottomTubeY() < (bird.getY() + AppConstant.getBitmapBank().getBirdHeight()))){
                         //GO TO GAME OVER SCREN
                         gameState = 2;
-                        Log.d("PLAYER", "YOU LOST");
+                       // Log.d("PLAYER", "YOU LOST");
+                        AppConstant.getSoundBank().playHit();
+                         Context context = AppConstant.gameActivityContext;
+
+                        Intent intent = new Intent(context, GameOver.class);
+                        intent.putExtra("Score",score);
+                        context.startActivity(intent);
+                        ((Activity) context).finish();
 
 
             }
 
-            if(tubes.get(scoringTube).getTubeX() < bird.getX() - AppConstant.getBitmapBank().getTubeWidth()){
+            else if(tubes.get(scoringTube).getTubeX() < bird.getX() - AppConstant.getBitmapBank().getTubeWidth()){
                 score++;
                 scoringTube++;
                 if (scoringTube > AppConstant.numberOfTubes - 1){
                     scoringTube = 0;
                 }
+                AppConstant.getSoundBank().playPoint();
             }
             for (int i =0; i <AppConstant.numberOfTubes; i++){
                 if(tubes.get(i).getTubeX() <- AppConstant.getBitmapBank().getTubeWidth()){

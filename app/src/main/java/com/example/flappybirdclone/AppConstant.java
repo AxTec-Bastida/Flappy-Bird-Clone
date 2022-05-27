@@ -24,12 +24,21 @@ public class AppConstant {
     //References to GAMEENGINE Objects
     static GameEngine gameEngine;
 
+    static SoundBank soundBank;
+
+    static Context gameActivityContext;
+
     public static void initialization(Context context){
         setScreenSize(context);
         bitmapBank = new BitmapBank(context.getResources());
         setFameConstants();
         gameEngine = new GameEngine();
+        soundBank = new SoundBank(context);
 
+    }
+
+    public static SoundBank getSoundBank(){
+        return soundBank;
     }
 
     public static void setFameConstants(){

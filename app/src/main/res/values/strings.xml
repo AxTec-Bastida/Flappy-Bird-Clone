@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Flappy Bird Clone</string>
+
+    <string name="Btn_Exit">Exit</string>
+    <string name="PointsTXT">Score</string>
+    <string name="Points">0</string>
+    <string name="BestScoreTXT">Best</string>
+    <string name="BestScore">0</string>
+
+    <!--MAIN ACTIVITY-->
+    <string name="AboutMenu">About</string>
+    <string name="ExitMenu">EXIT</string>
+    
+    <!--ABOUT-->
+    <string name="DevelopedByTXT">Developed By</string>
+    <string name="Developer">Axel Fernando Bastida</string>
+    <string name="Close">Close</string>
+    
+    
 </resources>

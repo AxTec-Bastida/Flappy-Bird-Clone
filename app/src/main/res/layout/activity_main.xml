@@ -33,8 +33,30 @@
             android:layout_height="60dp"
             android:layout_marginTop="30dp"
             android:src="@drawable/play">
-
         </androidx.appcompat.widget.AppCompatImageView>
+
+        <Button
+            android:id="@+id/AboutMenu"
+            android:text="@string/AboutMenu"
+            android:fontFamily="@font/flappybird_font"
+            android:textSize="35sp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#4A77A4">
+        </Button>
+
+        <Button
+            android:id="@+id/ExitMenu"
+            android:text="@string/ExitMenu"
+            android:fontFamily="@font/flappybird_font"
+            android:textSize="35sp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#4A77A4">
+        </Button>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>
